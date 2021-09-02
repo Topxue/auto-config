@@ -60,11 +60,9 @@ export default class extends React.Component {
     console.log('配置列与字段相差：', count)
 
     // 去除表头
-    if (type === 'api') {
-      trs.splice(0, 2)
-    } else {
-      trs.shift()
-    }
+    const deleteCount = type === 'api' ? 2 : 1
+
+    trs.splice(0, deleteCount)
 
     // 更新设置列标题
     trs.forEach((elem, index) => {
